@@ -8,10 +8,12 @@ import java.util.*;
 @Repository
 public class FakeDataDao implements UserDao{
     //Create inisilize data from Model DAO
-    private static Map<UUID, User> database;
+    private Map<UUID, User> database;
 
     //Add User data
-    static {
+
+
+    public FakeDataDao() {
         database = new HashMap<>();
         UUID ikhwanUserUid = UUID.randomUUID();
         database.put(ikhwanUserUid, new User(ikhwanUserUid, "Ikhwan", "Suciadi", User.Gender.MALE, 28, "ichwan100@gmail.com"));

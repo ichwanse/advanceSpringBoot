@@ -43,7 +43,7 @@ public class UserService {
         return 1;
     }
 
-    public int insertUser(UUID userUid, User user) {
+    public int insertUser(User user) {
         return userDao.insertUser(UUID.randomUUID(), user);
     }
 }
