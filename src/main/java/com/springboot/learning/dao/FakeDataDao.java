@@ -1,9 +1,11 @@
 package com.springboot.learning.dao;
 
 import com.springboot.learning.model.User;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository
 public class FakeDataDao implements UserDao{
     //Create inisilize data from Model DAO
     private static Map<UUID, User> database;
@@ -21,8 +23,8 @@ public class FakeDataDao implements UserDao{
     }
 
     @Override
-    public User selectUserByUserUid(UUID userUid) {
-        return database.get(userUid);
+    public Optional<User> selectUserByUserUid(UUID userUid) {
+        return Optional.ofNullable(database.get(userUid));
     }
 
     @Override
